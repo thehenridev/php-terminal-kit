@@ -1,0 +1,13 @@
+{
+    "name": "thehenridev/php-terminal-kit",
+    "description": "A simple way to make command line PHP applications",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TheHenriDev\\PHPTerminalKit\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
