@@ -1,6 +1,6 @@
 <?php
 
-namespace TheHenriDev\PHPTerminalKit;
+namespace TheHenriDev\PHPTerminalKit\List;
 
 class Option
 {
