@@ -44,9 +44,24 @@ class SelectionList
     return $this;
   }
 
-  public function getOptions()
+  public function getOptions(bool $selected = null, bool $expand = false)
   {
-    return $this->options;
+    $options = array();
+    if($selected) {
+      $options = array_filter(array_map(function($option) {
+        return $option->isSelected() ? $option : null;
+      }, $this->options));
+    } elseif(is_null($selected)) {
+      $options = $this->options;
+    } else {
+      $options = array_filter(array_map(function($option) {
+        return $option->isSelected() ? null : $option;
+      }, $this->options));
+    }
+
+    return $expand ? $options : array_map(function($option) {
+      return $option->getValue();
+    }, $options);
   }
 
   public function select(array|string $options)
